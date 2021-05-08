@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    nginx:
+        image: nginx:latest #拉取最新镜像
+        container_name: nginxSer #容器名,注意别冲突
+        restart: always
+        volumes:
+            - ./nginx/conf:/etc/nginx/conf.d #把容器的conf.d映射到 ./nginx/conf.d
+            - ../:/web/ #当前项目映射到容器内的web下
+            - ./nginx/log/:/var/log/nginx/ #把容器的日志导出到nginx/log文件下
+        ports:
+            - "8080:80" #8080 是linux 系统暴露的端口，也可以用默认的80端口,80是nginx 容器内部etc/nginx/conf.d 下文件对应的listen 端口

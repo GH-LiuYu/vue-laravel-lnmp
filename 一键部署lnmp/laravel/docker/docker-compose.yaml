@@ -1,0 +1,51 @@
+version: "3"
+#注意系统暴露的端口，要开启防火墙端口，不然无法访问
+services:
+    nginx:
+        image: nginx:latest #拉取最新镜像
+        container_name: nginx-server #容器名 注意别冲突
+        restart: always
+        volumes:
+            - ./nginx/conf:/etc/nginx/conf.d #把容器的conf.d映射到 ./nginx/conf.d
+            - ../:/www #把当前项目映射到容器内的www下
+            - ./nginx/log/:/var/log/nginx/ #把容器内生成的日志映射出来
+        networks:
+            - lnmp
+        depends_on:
+            - php
+        ports:
+            - "8081:80" #8081为当前系统暴露的端口，80是容器内暴露的端口，8081是映射到80 内部端口，所以访问8081就相当于访问到80端口
+    php:
+        image: php:7.4-fpm-alpine #拉取镜像
+        container_name: php-server #容器名
+        volumes:
+            - ../:/www #把当前项目映射到容器内的www下
+        networks:
+            - lnmp #网络名
+        ports:
+            - "9000:9000" #将当前系统的9000端口映射到容器内部的9000端口
+        depends_on:
+            - mysql 
+    mysql:
+        image: mysql:latest #拉取最新镜像
+        container_name: mysql-server #容器名
+        restart: always #标识重启自动启动容器
+        environment:
+              MYSQL_ROOT_HOST: '%' #标识允许任何地方登录 
+              MYSQL_ROOT_PASSWORD: 123456 #标识root 的密码
+              MYSQL_USER: test #标识普通用户
+              MYSQL_PASSWORD: 111111 #标识普通用户密码
+        command:
+              --default-authentication-plugin=mysql_native_password
+              --character-set-server=utf8mb4
+              --collation-server=utf8mb4_0900_ai_ci
+              --explicit_defaults_for_timestamp=true
+              --lower_case_table_names=1
+        ports:
+          - 3306:3306 #将系统3306端口映射到容器内部3306端口
+        volumes:
+              - ./mysql/conf/my.cnf:/etc/my.cnf #将当前mysql/conf 下的文件映射到容器内部etc/my.cnf 下
+        networks:
+              - lnmp
+networks: #指定网络名称
+    lnmp:

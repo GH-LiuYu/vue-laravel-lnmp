@@ -1,0 +1,15 @@
+2021/05/08 01:42:37 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:42:39 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:44:16 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:44:17 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:44:17 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:44:17 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:44:17 [error] 22#22: *2 "/www/dist/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:45:51 [error] 22#22: *1 "/www/dist/index.html" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:45:55 [error] 22#22: *1 "/www/dist/index.html" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:45:56 [error] 22#22: *1 "/www/dist/index.html" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 01:45:56 [error] 22#22: *1 "/www/dist/index.html" is not found (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", host: "192.168.186.128:8080"
+2021/05/08 02:37:44 [emerg] 1#1: "add_header" directive is not allowed here in /etc/nginx/conf.d/localhost80.conf:5
+2021/05/08 02:37:46 [emerg] 1#1: "add_header" directive is not allowed here in /etc/nginx/conf.d/localhost80.conf:5
+2021/05/08 02:37:48 [emerg] 1#1: "add_header" directive is not allowed here in /etc/nginx/conf.d/localhost80.conf:5
+2021/05/08 02:37:50 [emerg] 1#1: "add_header" directive is not allowed here in /etc/nginx/conf.d/localhost80.conf:5
